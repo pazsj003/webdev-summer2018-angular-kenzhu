@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">White Board</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register">Register</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" routerLink="/profile">Profile</a>
+
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+<div class="container-fluid p-4">
+  <h1 class="navbar-brand">Sections for course: {{course.title}}</h1>
+
+  <ul class="list-group">
+    <li *ngFor="let section of sections" class="list-group-item">
+      {{section.name}}  seat: {{section.seats}}
+      <button  *ngIf= "section.seats!==0" (click)="enroll(section)"
+              class="float-right btn btn-primary">Enroll</button>
+    </li>
+  </ul>
+
+</div>

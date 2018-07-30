@@ -1,0 +1,78 @@
+
+
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">White Board</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a   class="nav-link" [hidden]="adminMode" routerLink="/admin">Admin</a>
+
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()">Logout</a>
+
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+<div *ngIf=" null !== sections " class="container-fluid p-4">
+  <h1>Profile</h1>
+
+  <input [(ngModel)]="user.username"
+         placeholder="username"
+         class="form-control"/>
+  <input [(ngModel)]="user.firstName"
+         placeholder="first name"
+         class="form-control"/>
+  <input [(ngModel)]="user.lastName"
+         placeholder="lastName"
+         class="form-control"/>
+  <input [(ngModel)]="user.email"
+         placeholder="email"
+         class="form-control"/>
+  <input [(ngModel)]="user.phoneNumber"
+         placeholder="phone number"
+         class="form-control"/>
+  <input [(ngModel)]="user.address"
+         placeholder="address"
+         class="form-control"/>
+  <button (click)="update()"
+          class="btn btn-primary btn-block">
+    Update
+  </button>
+
+  <h2>Sections ({{sections.length}})</h2>
+
+  <ul class="list-group">
+    <li *ngFor="let enrollment of sections" class="list-group-item">
+      <a routerLink="/course/{{enrollment.section.courseId}}"  >{{enrollment.section.name}}</a>
+      ({{enrollment.section.seats}})
+      <button (click)="unenroll (enrollment)"
+              class="float-right btn btn-primary">delete</button>
+    </li>
+
+
+  </ul>
+
+
+
+
+
+
+
+
+
+</div>

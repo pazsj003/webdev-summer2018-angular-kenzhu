@@ -1,0 +1,18 @@
+
+<div *ngIf=" null !== modules " class="row">
+
+  <div class="col-3">
+    <ul class="list-group rounded">
+      <li class="list-group-item   active btn btn-light">Modules</li>
+      <li [ngClass]="{'active': module.id == moduleId}" *ngFor="let module of modules"
+          class="list-group-item wbdv active btn btn-outline-success">
+
+        <a    routerLink="/course/{{courseId}}/module/{{module.id}}">
+          {{module.title}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-8">
+    <app-lesson-tabs></app-lesson-tabs>
+  </div>
+</div>

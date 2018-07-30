@@ -1,0 +1,19 @@
+<div *ngIf=" null !== lessons ">
+<ul class="nav nav-tabs">
+  <li *ngFor="let lesson of lessons"
+      class="nav-item wbdv  ">
+
+    <a class="nav-link"
+       [ngClass]="{'active': lesson.id == lessonId}"
+       routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lesson.id}}">
+      {{lesson.title}}
+    </a>
+  </li>
+</ul>
+
+
+  <app-topic-list></app-topic-list>
+
+
+
+</div>

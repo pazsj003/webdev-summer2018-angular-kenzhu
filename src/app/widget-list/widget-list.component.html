@@ -1,0 +1,67 @@
+<div *ngIf=" null !== widgets " >
+
+  <div class="border p-4   rounded">
+  <div *ngFor="let widget of map">
+
+  <div [ngSwitch]="widget.widgetType">
+
+    <div *ngSwitchCase="'Heading'">
+      <div [ngSwitch]="widget.size">
+        <h1 *ngSwitchCase="'1'">{{widget.text}}</h1>
+        <h2 *ngSwitchCase="'2'">{{widget.text}}</h2>
+        <h3 *ngSwitchCase="'3'">{{widget.text}}</h3>
+
+      </div>
+    </div>
+
+
+    <div *ngSwitchCase="'Paragraph'">
+
+        <p>{{widget.text}}</p>
+
+    </div>
+
+
+    <div class = "p-4" *ngSwitchCase="'Link'">
+      <a href="{{widget.href}}">{{widget.text}}</a>
+    </div>
+
+    <div class = "p-4" *ngSwitchCase="'List'">
+
+      <div [ngSwitch]="widget.listType">
+        <div *ngSwitchCase="'unordered'">
+      <ul class="list-group">
+        <li
+            *ngFor="let item of widget.listItems.split('\n')">
+          {{item}}
+        </li>
+      </ul>
+        </div>
+
+        <div *ngSwitchCase="'ordered'">
+          <ol class="list-group">
+            <li
+                *ngFor="let item of widget.listItems.split('\n')">
+              {{item}}
+            </li>
+          </ol>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div *ngSwitchCase="'Image'">
+
+      <p>{{widget.text}}</p>
+      <img class = "p-4"
+           src={{widget.src}}/>
+
+    </div>
+
+
+  </div>
+  </div>
+  </div>
+</div>

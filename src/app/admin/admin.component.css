@@ -1,0 +1,21 @@
+.test{
+  color:red;
+}
+.courseContainer{
+  margin:20px;
+
+}
+
+.inlineStyle{
+  display: inline-block;
+}
+.li:focus{
+  background-color: yellow;
+  outline: 1px;
+}
+.list-group-item-action1:target{
+  color: red;
+  text-decoration: none;
+  background-color: red;
+}
+
