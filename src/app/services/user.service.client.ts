@@ -1,5 +1,5 @@
-const Host = 'http://localhost:4000';
-
+// const Host = 'http://localhost:4000';
+const Host = 'https://web-summer2018-nodejs-kenzhu.herokuapp.com' ;
 const APIUSER = Host + '/api/user/';
 const APILOGIN = Host + '/api/login' ;
 const APILOGOUT = Host + '/api/profile' ;

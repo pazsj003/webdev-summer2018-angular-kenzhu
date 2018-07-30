@@ -1,5 +1,7 @@
 export class CourseServiceClient {
-  COURSE_URL = 'http://localhost:8080/api/course';
+  // url = 'http://localhost:8080';
+  url = 'https://webdev-summerfull-2018.herokuapp.com';
+  COURSE_URL = this.url + '/api/course';
   findAllCourses() {
     return fetch(this.COURSE_URL)
       .then(response => response.json());

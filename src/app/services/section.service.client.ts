@@ -1,5 +1,6 @@
 export class SectionServiceClient {
-   URL = 'http://localhost:4000';
+   // URL = 'http://localhost:4000';
+   URL = 'https://web-summer2018-nodejs-kenzhu.herokuapp.com' ;
    SECTION_URL = this.URL + '/api/course/COURSEID/section';
    Find = this.URL + '/api/student/section';
    delete = this.URL + '/api/section/sectionId';
